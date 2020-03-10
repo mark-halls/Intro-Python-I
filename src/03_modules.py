@@ -40,6 +40,7 @@ print("cwd:", os.getcwd())
 try:
     print("User:", os.getlogin())
 except:
+    # needed for WSL instances
     import getpass
 
     print("User:", getpass.getuser())
