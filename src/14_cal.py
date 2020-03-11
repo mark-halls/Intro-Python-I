@@ -33,15 +33,15 @@ from datetime import datetime
 
 
 def render_calendar():
-    if len(sys.argv) > 3:
-        print("Script to print a calendar for a given month.")
-        print("If no options are specified, prints the current month")
-        print("usage: app_name <month> <optional-year>")
-    else:
+    try:
         month = sys.argv[1] if len(sys.argv) > 1 else datetime.today().month
         year = sys.argv[2] if len(sys.argv) > 2 else datetime.today().year
 
         print("\n" + calendar.month(int(year), int(month)) + "\n")
+    except:
+        print("Script to print a calendar for a given month.")
+        print("If no options are specified, prints the current month")
+        print("usage: app_name <month> <optional-year>")
 
 
 render_calendar()
